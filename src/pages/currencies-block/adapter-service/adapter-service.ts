@@ -55,7 +55,6 @@ export class AdapterService {
      * * Получить курс обмена валют
      */
     async getCurrenciesExchangeRates () {
-        return
         this.IsLoading.value = true
 
         return  new Promise<string | undefined>(async (resolve) => {
