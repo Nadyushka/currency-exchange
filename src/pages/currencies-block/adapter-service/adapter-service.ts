@@ -1,5 +1,5 @@
 import {ref} from "vue";
-import {CurrenciesEnum, CurrencyModel,} from '@/pages'
+import {CurrenciesEnum, CurrencyInListModel, CurrencyModel,} from '@/pages'
 import {currencies} from "@/shared";
 
 
@@ -19,7 +19,7 @@ export class AdapterService {
     /** Выбранная валюта */
     UserLocationCurrency = ref<CurrencyModel>(new CurrencyModel ({ Id: 1 ,Name: CurrenciesEnum.BYN }))
     /** Выбранная валюта */
-    CurrenciesExchangeRates = ref<Array<{Name: string, Rate: number}>>([])
+    CurrenciesExchangeRates = ref<Array<CurrencyInListModel>>([])
     /** Загрузка*/
     IsLoading = ref(true)
 
@@ -85,16 +85,16 @@ export class AdapterService {
     /**
      * Приведение обменных ставок к единому виду
      */
-    mapToCurrenciesExchangeRates(quotes: Record<string, number>):Array<{Name: string, Rate: number}> {
+    mapToCurrenciesExchangeRates(quotes: Record<string, number>):Array<CurrencyInListModel> {
         const quotesValues = Object.keys(quotes)
         return quotesValues.map((quote) => {
             const currencyName = quote.slice(3);
             const currencyRate = quotes[quote];
 
-            return {
+            return new CurrencyInListModel({
                 Name: currencyName,
                 Rate: currencyRate
-            };
+            });
         });
     }
 
