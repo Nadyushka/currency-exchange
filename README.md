@@ -1,7 +1,15 @@
 # Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### Запуск проекта:
 
-## Recommended IDE Setup
+#### 1. Скачать проект с помощью команды - git clone https://github.com/Nadyushka/currency-exchange.git
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+#### 2. Установите зависимости: npm install
+
+#### 3. Воспользоваться скриптами в package.json:
+
+ -  "dev": "vite" запускает сервер разработки, позволяя вам просматривать приложение в режиме реального времени
+
+ -  "build": "vite build" собирает ваше приложение, создавая оптимизированные статические файлы для развертывания
+
+ -  "preview": "vite preview" позволяет предварительно просмотреть собранное приложение локально
