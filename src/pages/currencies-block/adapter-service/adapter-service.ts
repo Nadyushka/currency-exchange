@@ -16,9 +16,9 @@ export class AdapterService {
 
     /** Выбранная валюта */
     SelectedCurrency = ref<CurrencyModel>(new CurrencyModel ({ Id: 1 ,Name: CurrenciesEnum.BYN }))
-    /** Выбранная валюта */
+    /** Валюта для местоположения пользователя */
     UserLocationCurrency = ref<CurrencyModel>(new CurrencyModel ({ Id: 1 ,Name: CurrenciesEnum.BYN }))
-    /** Выбранная валюта */
+    /** Курсы валют  */
     CurrenciesExchangeRates = ref<Array<CurrencyInListModel>>([])
     /** Загрузка*/
     IsLoading = ref(true)
